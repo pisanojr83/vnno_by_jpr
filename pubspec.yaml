@@ -16,9 +16,6 @@ dependencies:
   firebase_core: ^2.27.0
   cloud_firestore: ^4.15.8
 
-  # Notificaciones locales (versiones modernas + fix linux)
-  flutter_local_notifications: ^17.1.2
-  flutter_local_notifications_linux: ^4.0.0
 
 dev_dependencies:
   flutter_test:
