@@ -1,0 +1,9 @@
+/pubspec.yaml
+/lib/main.dart
+/lib/screens/home.dart
+/lib/screens/transactions.dart
+/lib/models/transaction.dart
+/lib/providers/transactions_provider.dart
+/assets/images/logo.png
+README.md
+.gitignore
