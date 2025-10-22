@@ -4,23 +4,26 @@ publish_to: "none"
 version: 0.0.1+1
 
 environment:
-  sdk: ">=2.18.0 <4.0.0"
+  sdk: ">=3.3.0 <4.0.0"   # Dart 3 (alineado con Flutter stable actual)
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-  provider: ^6.0.5
+  cupertino_icons: ^1.0.6
+  provider: ^6.1.2
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  firebase_core: ^2.10.0
-  cloud_firestore: ^4.5.0
-  flutter_local_notifications: ^12.0.4
+  firebase_core: ^2.27.0
+  cloud_firestore: ^4.15.8
+
+  # Notificaciones locales (versiones modernas + fix linux)
+  flutter_local_notifications: ^17.1.2
+  flutter_local_notifications_linux: ^4.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
 
 flutter:
   uses-material-design: true
