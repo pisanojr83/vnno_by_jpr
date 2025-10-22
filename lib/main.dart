@@ -78,13 +78,14 @@ class VNNOApp extends StatelessWidget {
         foregroundColor: Colors.black,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),
-      cardTheme: CardTheme(
-        elevation: 0,
-        color: Colors.white,
-        surfaceTintColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
-      ),
-    );
+     cardTheme: const CardThemeData(
+  elevation: 0,
+  color: Colors.white,
+  surfaceTintColor: Colors.white,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(Radius.circular(18)),
+  ),
+),
 
     return ChangeNotifierProvider(
       create: (_) => AppState(),
