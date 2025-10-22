@@ -86,6 +86,7 @@ class VNNOApp extends StatelessWidget {
     borderRadius: BorderRadius.all(Radius.circular(18)),
   ),
 ),
+);      
 
     return ChangeNotifierProvider(
       create: (_) => AppState(),
