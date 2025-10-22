@@ -3,11 +3,17 @@ workflows:
     name: VNNO by JPR - Android Build
     max_build_duration: 60
     environment:
-      flutter: stable
+      flutter: stable   # Usará la versión estable más reciente
       xcode: latest
       vars:
         PACKAGE_NAME: "com.vnno.jpr"
     scripts:
+      - name: Generar proyecto Android (si falta)
+        script: |
+          # Si no existe la carpeta android/, crea la estructura mínima del proyecto
+          if [ ! -d "android" ]; then
+            flutter create --platforms=android .
+          fi
       - name: Obtener dependencias
         script: |
           flutter pub get
@@ -20,3 +26,4 @@ workflows:
       email:
         recipients:
           - pisanojr83@gmail.com
+
