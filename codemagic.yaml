@@ -76,14 +76,26 @@ workflows:
           subprojects { project.evaluationDependsOn(":app") }
           tasks.register("clean", Delete) { delete rootProject.buildDir }
           EOF
-      - name: flutter pub get
+            - name: flutter pub get
         script: flutter pub get
-      - name: Compilar APK release
-        script: flutter build apk --release
+
+      - name: Compilar APKs por ABI 
+        script: |
+          flutter build apk --release --split-per-abi
+
+      - name: Compilar APK debug para emulador
+        script: |
+          flutter build apk --debug --target-platform=android-x64
+
     artifacts:
-      - build/app/outputs/flutter-apk/app-release.apk
+      - build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
+      - build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk
+      - build/app/outputs/flutter-apk/app-x86_64-release.apk
+      - build/app/outputs/flutter-apk/app-debug.apk
+
     publishing:
       email:
         recipients:
           - pisanojr83@gmail.com
+
 
